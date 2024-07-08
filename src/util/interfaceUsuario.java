@@ -1,16 +1,24 @@
 package util;
 import java.util.Scanner;
+import java.util.InputMismatchException;
+
 public class interfaceUsuario {
 
     public double pedirValorImovel() {
         Scanner leitor = new Scanner(System.in);
-        System.out.println("Qual o valor do seu imóvel?");
-        double valorImovel = leitor.nextDouble();
-        while (valorImovel < 0) {
-            System.out.println("Valor digitado está incorreto. Digite novamente:");
+        double valorImovel = 0.0; // Inicialização para evitar erro de compilação
+        try {
+            System.out.println("Qual o valor do seu imóvel?");
             valorImovel = leitor.nextDouble();
+            while (valorImovel < 0) {
+                System.out.println("Valor digitado está incorreto. Digite novamente:");
+                valorImovel = leitor.nextDouble();
+            }
+            System.out.println("Valor digitado: R$" + valorImovel);
+        } catch (InputMismatchException e) {
+            System.out.println("Erro: Valor digitado não é um número válido. Tente novamente.");
+            // Aqui você pode adicionar outras ações, como registrar o erro ou pedir nova entrada.
         }
-        System.out.println("Valor digitado: R$" + valorImovel);
         return valorImovel;
     }
 

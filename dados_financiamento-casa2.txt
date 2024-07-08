@@ -1,0 +1,6 @@
+Valor do imóvel: R$10500.0
+Valor do financiamento: R$22356.887408774823
+Taxa de juros: 400.0% ao ano
+Prazo de financiamento: 10 anos
+Área construída da casa: 150.0 m²
+Área de terreno da casa: 300.0 m²

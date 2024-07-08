@@ -1,0 +1,5 @@
+Valor do terreno: R$10500.0
+Valor do financiamento: R$13012.025156950322
+Taxa de juros: 400.0% ao ano
+Prazo de financiamento: 10 anos
+Zona do terreno: Rural

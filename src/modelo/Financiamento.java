@@ -2,11 +2,11 @@ package modelo;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Financiamento {
+public  abstract class Financiamento {
     // Atributos
-    private double valorImovel;
-    private int prazoFinanciamento;
-    private double taxaJurosAnual;
+    protected double valorImovel;
+    protected int prazoFinanciamento;
+    protected double taxaJurosAnual;
 
     // Construtor
     public Financiamento(double valorDesejadoImovel, int prazoFinanciamentoAnos, double taxaJurosAnualmente) {
@@ -37,7 +37,17 @@ public class Financiamento {
         double valorTotalFinanciamento = this.valorImovel + jurosTotais;
         return valorTotalFinanciamento;
     }
+
+    public double calcularValorParcelaMensal() {
+        int numParcelas = prazoFinanciamento * 12; // Total de parcelas
+        double taxaMensal = taxaJurosAnual / 100 / 12; // Taxa de juros mensal
+
+        // Fórmula para calcular o valor da parcela mensal
+        double valorParcela = valorImovel * taxaMensal / (1 - Math.pow(1 + taxaMensal, -numParcelas));
+        return valorParcela;
+    }
 }
+
 
 
 
